@@ -1,0 +1,26 @@
+@media screen and (max-width: 1199px) {
+  .shop {
+    max-width: 220px;
+    min-width: 220px;
+    padding: 5px;
+    img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+  .interesting {
+    .cookie-3 {
+      display: none;
+    }
+  }
+  .slider {
+    #slider {
+      .owl-stage {
+        left: unset;
+        .owl-item {
+          //max-width: none!important;
+        }
+      }
+    }
+  }
+}

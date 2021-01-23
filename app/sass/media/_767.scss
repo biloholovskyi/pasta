@@ -1,0 +1,111 @@
+@media screen and (max-width: 767px) {
+ .contact_page {
+   padding: 100px 0;
+   .contact_page--contact {
+     margin-bottom: 48px;
+   }
+   .form_title {
+     display: block;
+     margin-bottom: 32px;
+   }
+   .form_section {
+     .double {
+       p {
+         text-align: center;
+         width: 100%;
+       }
+     }
+   }
+ }
+  .product {
+    padding: 30px 0;
+    min-height: unset;
+    max-height: none;
+    .back {
+      p {
+        display: none;
+      }
+    }
+    &_overlay {
+      min-height: unset;
+      max-height: none;
+      .cookie-2,
+      .cookie-4 {
+        display: none;
+      }
+      .cookie-3 {
+        width: 124px;
+        height: 116.67px;
+        top: 200px;
+      }
+      .cookie-1 {
+        width: 126.05px;
+        height: 115.32px;
+        left: 50px;
+        top: 100px;
+      }
+    }
+    &_title {
+      position: relative;
+      max-width: none;
+      left: unset;
+      transform: none;
+      top: unset;
+      text-align: center;
+      padding-bottom: 50px;
+      .name {
+        width: 100%;
+      }
+    }
+    &_main {
+      .item {
+        max-width: 150px;
+        height: 324px;
+        .pasta{
+          max-width: 150px;
+          min-height: 324px;
+        }
+        .shadow {
+          min-width: 222px;
+          bottom: 34px;
+        }
+      }
+    }
+  }
+  .information .cookie-2 {
+    top: -82px;
+    right: -97px;
+    transform: rotate(43.1deg);
+    left: unset;
+    bottom: unset;
+    display: block;
+  }
+  .interesting {
+    .cookie-2 {
+      display: none;
+    }
+  }
+  .footer {
+    flex-direction: column-reverse;
+    padding: 24px 0;
+    .right {
+      margin-bottom: 24px;
+    }
+    .left {
+      flex-direction: column;
+      .border {
+        display: none;
+      }
+      .politics {
+        margin-top: 16px;
+      }
+    }
+  }
+  .shop_block {
+    &--content {
+     .map {
+       display: none;
+     }
+    }
+  }
+}

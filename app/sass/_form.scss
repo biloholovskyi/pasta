@@ -1,0 +1,115 @@
+.form_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  .input-wrapper {
+    width: 100%;
+    position: relative;
+    border: 1px solid rgba(23, 18, 25, 0.2);
+    margin-bottom: 36px;
+    border-radius: 5px;
+    min-height: 48px;
+    .label {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 16px;
+      background-color: #fff;
+      font-style: normal;
+      font-family: 'Gilroy M';
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 14px;
+      color: #1F1F1F;
+      padding: 0 8px;
+      transition: .3s;
+    }
+    input {
+      border: none;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding-left: 20px;
+      font-family: 'Gilroy R';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+      color: #1F1F1F;
+    }
+  }
+  .textarea-wrapper {
+    min-height: 100px;
+
+    textarea {
+      padding: 13px 20px ;
+      height: 100%;
+      width: 100%;
+      border: none;
+      position: absolute;
+      background-color: transparent;
+      top: 0;
+      left: 0;
+      resize: none;
+      font-family: 'Gilroy R';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+      color: #1F1F1F;
+    }
+    .textarea-label {
+      top: 23px;
+    }
+  }
+  .input-wrapper--input {
+    .label {
+      top: 0px;
+      font-size: 12px;
+    }
+  }
+  .double {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    .send {
+      font-family: 'Gilroy SemiBold';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.01em;
+      color: #FFFFFF;
+      padding: 14px 24px;
+      background: #171219;
+      border-radius: 1000px;
+      margin-right: 36px;
+      border: none;
+    }
+    p {
+      font-family: 'Gilroy M';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.01em;
+      color: rgba(23, 18, 25, 0.6);
+    }
+  }
+}
+.form_title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  color: #171219;
+  margin-bottom: 36px;
+  font-family: 'Gilroy Bold';
+  display: none;
+}
+

@@ -1,0 +1,44 @@
+.shop {
+  background: #FFFFFF;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 252px;
+  min-width: 252px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+
+  img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    margin-right: 16px;
+  }
+
+  .info {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    & p:first-child {
+      font-family: 'Gilroy R';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.01em;
+      color: #171219;
+    }
+    & p:last-child {
+      font-family: 'Gilroy R';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.01em;
+      color: rgba(23, 18, 25, 0.8);
+    }
+  }
+
+}

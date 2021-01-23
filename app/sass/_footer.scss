@@ -1,0 +1,53 @@
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  position: fixed;
+  bottom: 48px;
+  left: 0;
+  z-index: 2;
+  .left {
+    display: flex;
+    align-items: center;
+    .border {
+      margin: 0 8px;
+    }
+    & div:last-child {
+      text-decoration-line: underline;
+    }
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .social {
+      width: 18px;
+      height: 18px;
+      display: block;
+      margin-right: 18px;
+    }
+    & .social:last-child {
+      margin-right: 0;
+    }
+
+  }
+  .left > * {
+    font-family: 'Gilroy M';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    color: rgba(23, 18, 25, 0.6);
+  }
+}
+
+.footer_product {
+  position: relative!important;
+  background-color: #F7ECD5;
+  padding: 48px;
+  bottom: 0;
+  //border-top: 1px solid rgba(23, 18, 25, 0.1);
+}
