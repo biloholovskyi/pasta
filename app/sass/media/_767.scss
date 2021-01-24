@@ -17,6 +17,7 @@
      }
    }
  }
+
   .product {
     padding: 30px 0;
     min-height: unset;
@@ -72,6 +73,7 @@
       }
     }
   }
+
   .information .cookie-2 {
     top: -82px;
     right: -97px;
@@ -80,11 +82,13 @@
     bottom: unset;
     display: block;
   }
+
   .interesting {
     .cookie-2 {
       display: none;
     }
   }
+
   .footer {
     flex-direction: column-reverse;
     padding: 24px 0;
@@ -101,11 +105,90 @@
       }
     }
   }
+
   .shop_block {
     &--content {
      .map {
        display: none;
      }
     }
+  }
+
+  .intro {
+
+    &_main {
+      margin-bottom: 50px;
+      .item {
+        max-width: 215px;
+        height: 272px;
+        .pasta{
+          max-width: 215px;
+          min-height: 272px;
+        }
+        .shadow {
+          min-width: 242px;
+          bottom: -40px;
+        }
+      }
+      .center {
+        display: none!important;
+      }
+    }
+
+    &_title {
+      top: 90%;
+      MAX-WIDTH: 100%;
+      width: 100%;
+      padding: 0 20px;
+      text-align: center;
+      align-items: center;
+      .name {
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: 16px;
+      }
+      .desc {
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 23px;
+      }
+      .detail {
+        width: 100%;
+      }
+    }
+
+    &_overlay {
+      min-height: 100vh;
+      min-width: 100%;
+      .cookie-1 {
+        width: 126.05px!important;
+        height: 115.32px;
+        left: -20px;
+        top: 130px;
+      }
+    }
+
+    .cookie-3 {
+      width: 124px!important;
+      height: 116.67px;
+    }
+  }
+
+  .header {
+    top: 20px;
+    .logo_block {
+      .small {
+        display: none;
+      }
+    }
+  }
+
+  .footer_contact {
+    position: relative;
+    border-top: 1px solid rgba(23,18,25,.1);
+    bottom: 0;
+  }
+  .header_contact {
+    position: relative;
   }
 }

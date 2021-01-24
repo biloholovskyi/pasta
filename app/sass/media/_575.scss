@@ -187,4 +187,28 @@
       display: flex;
     }
   }
+  .header {
+    align-items: center;
+    padding: 0 20px;
+    .lang_block {
+      display: none;
+    }
+    .lang_mobile {
+      display: block;
+      .ru, .eng {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    .logo_block {
+      .big {
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+    .contacts {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
 }
