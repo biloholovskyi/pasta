@@ -28,28 +28,28 @@ const webConfig = {
 gulp.task('default', function() {
   browserSync.init({
     server: {
-        baseDir: "./app"
+      baseDir: "./app/wp-content/themes/pasta"
     }
-});
-    gulp.watch("app/sass/**/*.scss", function () {
-        return gulp.src("app/sass/**/*.scss")
-          .pipe(sass())
-          .pipe(autoprefixer({
-            overrideBrowserslist: ['> 0.1%'],
-            cascade: false
-          }))
-          .pipe(cleanCSS({
-            level: 2
-          }))
-          .pipe(gulp.dest("app/css"))
-          .pipe(browserSync.stream());
-    });
-    gulp.watch("app/js/**/*.js", function () {
-      return gulp.src("app/js/index.js")
-        .pipe(webpack(webConfig))
-        .pipe(gulp.dest("app/buildjs"))
-        .pipe(browserSync.stream());
-    });
-    gulp.watch("app/**/*.php").on('change', browserSync.reload);
-    gulp.watch("app/**/*.html").on('change', browserSync.reload);
+  });
+  gulp.watch("app/wp-content/themes/pasta/sass/**/*.scss", function () {
+    return gulp.src("app/wp-content/themes/pasta/sass/**/*.scss")
+      .pipe(sass())
+      .pipe(autoprefixer({
+        overrideBrowserslist: ['> 0.1%'],
+        cascade: false
+      }))
+      .pipe(cleanCSS({
+        level: 2
+      }))
+      .pipe(gulp.dest("app/wp-content/themes/pasta/css"))
+      .pipe(browserSync.stream());
+  });
+  gulp.watch("app/wp-content/themes/pasta/js/**/*.js", function () {
+    return gulp.src("app/wp-content/themes/pasta/js/index.js")
+      .pipe(webpack(webConfig))
+      .pipe(gulp.dest("app/wp-content/themes/pasta/buildjs"))
+      .pipe(browserSync.stream());
+  });
+  gulp.watch("app/wp-content/themes/pasta/**/*.php").on('change', browserSync.reload);
+  gulp.watch("app/wp-content/themes/pasta/**/*.html").on('change', browserSync.reload);
 });

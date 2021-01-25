@@ -1,0 +1,83 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 48px;
+  width: 100%;
+  padding: 0 48px;
+  z-index: 2;
+  .contacts {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: #171219;
+    font-family: 'Gilroy SemiBold';
+  }
+
+  .logo_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .big {
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+      color: #171219;
+      font-family: 'Gilroy ExtraBold';
+    }
+    .small {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: 0.01em;
+      color: #171219;
+      font-family: 'Gilroy SemiBold';
+    }
+  }
+
+  .lang_block > * {
+    font-family: 'Gilroy M';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: rgba(23, 18, 25, 0.6);
+
+  }
+
+  .lang_block {
+    & a:first-child {
+      margin-right: 16px;
+    }
+    .active {
+      position: relative;
+      color: #171219;
+      z-index: 5;
+      &:before {
+        content: "";
+        width: 41px;
+        height: 10px;
+        position: absolute;
+        bottom: 0;
+        left: -4px;
+        background-color: #D1C7B4;
+        z-index: -1;
+      }
+    }
+  }
+
+  .lang_mobile {
+    display: none;
+  }
+}

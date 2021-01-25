@@ -1,0 +1,214 @@
+@media screen and (max-width: 575px) {
+  .contact_page {
+    padding: 48px 0;
+    .contact_page--contact {
+      margin-bottom: 48px;
+      h3 {
+        font-size: 28px;
+        line-height: 32px;
+      }
+    }
+    .form_title {
+      font-size: 28px;
+      line-height: 32px;
+    }
+    .form_section {
+      .double {
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  .product {
+    padding: 40px 0;
+    min-height: unset;
+    max-height: none;
+    .back {
+      top: 20px;
+      left: 20px;
+      .arrow {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+      p {
+        display: none;
+      }
+    }
+    &_overlay {
+      min-height: unset;
+      max-height: none;
+      .cookie-3 {
+        width: 124px;
+        height: 116.67px;
+        top: 200px;
+      }
+      .cookie-1 {
+        width: 126.05px;
+        height: 115.32px;
+        left: -14px;
+        top: 100px;
+      }
+    }
+    &_title {
+
+      .name {
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: 16px;
+      }
+      .desc {
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 24px;
+      }
+    }
+    &_main {
+      .item {
+        max-width: 174.19px;
+        height: 220px;
+        margin-bottom: 24px;
+        .pasta{
+          max-width: 174.19px;
+          min-height: 220px;
+        }
+        .shadow {
+          min-width: 222px;
+          bottom: -32px;
+        }
+      }
+    }
+  }
+  .shop {
+    padding: 8px;
+    img {
+      width: 56px;
+      height: 56px;
+    }
+  }
+
+  .descr {
+    padding-bottom: 48px;
+    .descr_block {
+      padding-bottom: 24px;
+      .characteristics {
+        flex-wrap: wrap;
+        .items {
+          flex: 50%;
+        }
+        & .items:nth-child(1) {
+          margin-bottom: 24px;
+        }
+        & .items:nth-child(2) {
+          margin-bottom: 24px;
+        }
+      }
+    }
+    .descr_block--title {
+      font-size: 28px;
+      line-height: 32px;
+    }
+    .descr_block--desc {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  .information {
+    .cookie-2 {
+      width: 128.89px;
+      height: 72.39px;
+      right: -20px;
+      top: -60px;
+    }
+  }
+  .slider {
+    padding-bottom: 48px;
+    #slider {
+      .owl-stage {
+        left: -64px;
+        .owl-item {
+          // max-width: none!important;
+        }
+      }
+      .owl-nav {
+        display: none;
+      }
+    }
+  }
+  .slider_title {
+    font-size: 28px;
+    line-height: 32px;
+    color: #171219;
+    margin-bottom: 24px;
+    padding-bottom: 0;
+  }
+  .buy_online {
+    .buy {
+     padding: 48px 0;
+      h3 {
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: 16px;
+        width: 100%;
+        text-align: left;
+      }
+      .buy_desc {
+        font-size: 16px;
+        line-height: 26px;
+        text-align: left;
+      }
+      .links_shop {
+        flex-direction: column;
+        width: 100%;
+        & .shop:first-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .shop_block {
+    overflow: visible;
+    padding-bottom: 48px;
+    h3 {
+      font-size: 28px;
+      line-height: 32px;
+      margin-bottom: 24px;
+    }
+    &--content {
+      display: none;
+    }
+    &--mobile {
+      display: flex;
+    }
+  }
+  .header {
+    align-items: center;
+    padding: 0 20px;
+    .lang_block {
+      display: none;
+    }
+    .lang_mobile {
+      display: block;
+      .ru, .eng {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    .logo_block {
+      .big {
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+    .contacts {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
