@@ -45,29 +45,30 @@ $(document).ready(() => {
     }
   })
 
+
   $('#main').owlCarousel({
-    margin: 10,
-    nav: false,
-    dots: false,
-    items: 1,
-    loop:true,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
-    mouseDrag: false,
-    touchDrag: false,
-    responsive: {
-      0 :{
-        mouseDrag: true,
-        touchDrag: true,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-      },
-      575: {
-        mouseDrag: false,
-        touchDrag: false,
+      margin: 10,
+      nav: false,
+      dots: false,
+      items: 1,
+      loop:true,
+      animateOut: 'fadeOut',
+      animateIn: 'fadeIn',
+      mouseDrag: false,
+      touchDrag: false,
+      responsive: {
+        0 :{
+          mouseDrag: true,
+          touchDrag: true,
+          animateOut: 'fadeOut',
+          animateIn: 'fadeIn',
+        },
+        575: {
+          mouseDrag: false,
+          touchDrag: false,
+        }
       }
-    }
-  });
+    });
 
 
   $('.shop_block--mobile .mobile_head--name').on('click', function (){
@@ -79,7 +80,7 @@ $(document).ready(() => {
 
 });
 
-$(document).on('click', function (e){
+$(document).on('click', function (e) {
 
   let modal = $('.mobile_head--name, .city_list');
 
