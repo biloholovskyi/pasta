@@ -6,6 +6,7 @@ $(document).ready(() => {
   $('.news_tab--head .tabs .tab').on('click', (e) => {switchTabs(e)});
 
   $('.form_section input').on('input', (e) => inputForm(e));
+
   $('.form_section textarea').on('input', (e) => inputForm(e));
 
   $('.recipe').owlCarousel({
@@ -45,7 +46,6 @@ $(document).ready(() => {
     }
   })
 
-
   $('#main').owlCarousel({
       margin: 10,
       nav: false,
@@ -77,6 +77,24 @@ $(document).ready(() => {
     $(this).siblings().removeClass('show');
     $(this).siblings().children('img').removeClass('rotate');
   })
+
+  $('.form_section').on('submit', function (e) {
+    e.preventDefault();
+      $.ajax({
+        url: '/wp-content/themes/pasta/send.php',
+        type: 'POST',
+        data: $(this).serialize(),
+        success: function (data) {
+          $('.alert-modal').fadeIn('slow').css('display', 'flex');
+          $('input[type="text"], textarea').val('');
+          $('.input-wrapper--input').removeClass('input-wrapper--input');
+          setTimeout(function () {
+            $('.alert-modal').fadeOut('slow');
+          }, 2000)
+        }
+      });
+      return false;
+  });
 
 });
 

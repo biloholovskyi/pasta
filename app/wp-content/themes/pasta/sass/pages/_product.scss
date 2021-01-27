@@ -481,6 +481,10 @@
     z-index: 3;
     //background: red;
     //height: 719px;
+    display: none;
+    &.active {
+      display: block;
+    }
   }
 
   .cookie-3 {

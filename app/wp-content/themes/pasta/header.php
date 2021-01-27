@@ -29,5 +29,5 @@
     <a class="ru active" href="#">RUS</a>
     <a class="eng" href="#">ENG</a>
   </div>
-  <a class="contacts" href="/contact.html">Контакты</a>
+  <a class="contacts" href="/app/contact">Контакты</a>
 </header>

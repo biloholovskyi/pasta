@@ -2,7 +2,7 @@
   <div class="left">
     <div>© ОАО «GoodNut» 2020 г.</div>
     <div class="border">/</div>
-    <div class="politics">Политика конфиденциальности</div>
+    <a href="#" target="_blank" class="politics">Политика конфиденциальности</a>
   </div>
   <div class="right">
     <a class="social" href="#"><img src="./media/icon/yt.svg" alt="icon"></a>
@@ -31,14 +31,27 @@
 <script>
   ymaps.ready(init);
   function init(){
-    var myMap = new ymaps.Map("map", {
-      center: [51.767703, 55.198824],
+    <?php
+    $args = array(
+      'numberposts' => -1,
+      'orderby'     => 'date',
+      'order'       => 'DESC',
+      'post_type'   => 'contact',
+      'suppress_filters' => true,
+    );
+
+    $posts = get_posts( $args );
+    foreach($posts as $post){ setup_postdata($post);
+    ?>
+
+    var myMap<?php echo $post->ID; ?> = new ymaps.Map("map-<?php echo $post->ID; ?>", {
+      center: [<?php echo get_field('contact_coordination'); ?>],
       zoom: 17
     });
 
-    myMap.behaviors.disable(['drag', 'scrollZoom', 'dblClickZoom']);
+    myMap<?php echo $post->ID; ?>.behaviors.disable(['drag', 'scrollZoom', 'dblClickZoom']);
 
-    myMap.controls
+    myMap<?php echo $post->ID; ?>.controls
       .remove('trafficControl')
       .remove('fullscreenControl')
       .remove('rulerControl')
@@ -47,31 +60,42 @@
       .remove('zoomControl')
       .remove('geolocationControl');
 
-    var myPin = new ymaps.Placemark([51.767703, 55.198824],
+    var myPin<?php echo $post->ID; ?> = new ymaps.Placemark([<?php echo get_field('contact_coordination'); ?>],
       {
-        balloonContentHeader: 'BRP',
-        balloonContentBody: 'BRP',
-        balloonContentFooter: 'BRP',
-        hintContent: 'BRP'
+        balloonContentHeader: 'MOTODOM',
+        balloonContentBody: 'MOTODOM',
+        balloonContentFooter: 'MOTODOM',
+        hintContent: 'MOTODOM'
       },
       {
         iconLayout: 'default#image',
-        // iconImageHref: '../wp-content/themes/motodom/media/icon/pin.png',
-        iconImageHref: './media/icon/pin.png',
+        iconImageHref: '../wp-content/themes/motodom/media/icon/newPin.png',
         iconImageSize: [83.14, 64],
         iconImageOffset: [0, 0]
       });
 
-    myMap.geoObjects.add(myPin);
+    myMap<?php echo $post->ID; ?>.geoObjects.add(myPin<?php echo $post->ID; ?>);
+    <?php
+    }
+    wp_reset_postdata(); // сброс
+    ?>
   }
 
   $(document).ready(function () {
+    sizeMap();
+  });
+
+  $(window).resize(function () {
+    sizeMap();
+  });
+
+  function sizeMap () {
     let windowWidth = $(window).width();
     let containerWidth = $('.container').width();
     let wrapper = $('.contact-page__wrapper').width();
     let mapWidth = windowWidth - ((windowWidth - containerWidth) / 2 + wrapper);
 
-    // $('#map').css('width', mapWidth + 'px');
-  });
+    // $('.contact-page__map').css('width', mapWidth + 'px');
+  }
 </script>
 </html>
