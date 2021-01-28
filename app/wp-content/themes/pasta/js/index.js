@@ -3,16 +3,18 @@ import {switchTabs} from "./tabs";
 
 $(document).ready(() => {
 
-  $('.news_tab--head .tabs .tab').on('click', (e) => {switchTabs(e)});
+  $('.news_tab--head .tabs .tab').on('click', (e) => {
+    switchTabs(e)
+  });
 
   $('.form_section input').on('input', (e) => inputForm(e));
 
   $('.form_section textarea').on('input', (e) => inputForm(e));
 
   $('.recipe').owlCarousel({
-    loop:false,
+    loop: false,
     margin: 24,
-    nav:true,
+    nav: true,
     dots: false,
     items: 4,
     center: true,
@@ -47,31 +49,31 @@ $(document).ready(() => {
   })
 
   $('#main').owlCarousel({
-      margin: 10,
-      nav: false,
-      dots: false,
-      items: 1,
-      loop:true,
-      animateOut: 'fadeOut',
-      animateIn: 'fadeIn',
-      mouseDrag: false,
-      touchDrag: false,
-      responsive: {
-        0 :{
-          mouseDrag: true,
-          touchDrag: true,
-          animateOut: 'fadeOut',
-          animateIn: 'fadeIn',
-        },
-        575: {
-          mouseDrag: false,
-          touchDrag: false,
-        }
+    margin: 10,
+    nav: false,
+    dots: false,
+    items: 1,
+    loop: true,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    mouseDrag: false,
+    touchDrag: false,
+    responsive: {
+      0: {
+        mouseDrag: true,
+        touchDrag: true,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+      },
+      575: {
+        mouseDrag: false,
+        touchDrag: false,
       }
-    });
+    }
+  });
 
 
-  $('.shop_block--mobile .mobile_head--name').on('click', function (){
+  $('.shop_block--mobile .mobile_head--name').on('click', function () {
     $(this).children('img').toggleClass('rotate');
     $(this).toggleClass('show');
     $(this).siblings().removeClass('show');
@@ -80,20 +82,20 @@ $(document).ready(() => {
 
   $('.form_section').on('submit', function (e) {
     e.preventDefault();
-      $.ajax({
-        url: '/wp-content/themes/pasta/send.php',
-        type: 'POST',
-        data: $(this).serialize(),
-        success: function (data) {
-          $('.alert-modal').fadeIn('slow').css('display', 'flex');
-          $('input[type="text"], textarea').val('');
-          $('.input-wrapper--input').removeClass('input-wrapper--input');
-          setTimeout(function () {
-            $('.alert-modal').fadeOut('slow');
-          }, 2000)
-        }
-      });
-      return false;
+    $.ajax({
+      url: '/wp-content/themes/pasta/send.php',
+      type: 'POST',
+      data: $(this).serialize(),
+      success: function (data) {
+        $('.alert-modal').fadeIn('slow').css('display', 'flex');
+        $('input[type="text"], textarea').val('');
+        $('.input-wrapper--input').removeClass('input-wrapper--input');
+        setTimeout(function () {
+          $('.alert-modal').fadeOut('slow');
+        }, 2000)
+      }
+    });
+    return false;
   });
 
 });
@@ -102,7 +104,7 @@ $(document).on('click', function (e) {
 
   let modal = $('.mobile_head--name, .city_list');
 
-  if(!modal.is(e.target) && modal.has(e.target).length === 0) {
+  if (!modal.is(e.target) && modal.has(e.target).length === 0) {
     modal.removeClass('show');
     $('.mobile_head--name img').removeClass('rotate');
   }
@@ -113,9 +115,9 @@ $(document).on('click', function (e) {
 // change slide on mouse scroll
 let owl = $('.main');
 //let circle = document.querySelector('.circle_border');
-document.querySelector('.main').onwheel = function(){
+document.querySelector('.main').onwheel = function () {
 
-  if(event.wheelDelta > 0){
+  if (event.wheelDelta > 0) {
 
     //circle.classList.add('rotate');
     //setTimeout(() => circle.classList.remove('rotate'), 2000);
