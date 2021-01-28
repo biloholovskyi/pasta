@@ -335,7 +335,7 @@
     justify-content: center;
     flex-direction: column;
     padding: 128px 0;
-    border-bottom: 1px solid rgba(23, 18, 25, 0.1);
+    //border-bottom: 1px solid rgba(23, 18, 25, 0.1);
 
     h3 {
       font-family: 'Gilroy Bold';
@@ -630,3 +630,159 @@
 //  border-top-right-radius: 10px!important;
 //  border-bottom-right-radius: 10px!important;
 //}
+
+// Receipt modal
+
+.receipt_modal--overlay {
+  //position: absolute;
+  //top: 0;
+  //left: 0;
+  //width: 100%;
+  //background-color: #fff;
+  //height: fit-content;
+  //min-height: 100vh;
+  padding: 90px;
+  z-index: 30;
+  .close {
+    background-color: rgba(23, 18, 25, 0.1);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    position: absolute;
+    right: 23px;
+    top: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .modal_title {
+    font-family: 'Gilroy Bold';
+    margin-bottom: 32px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    padding-right: 42px;
+    color: #171219;
+  }
+  .small_title {
+    font-family: 'Gilroy Bold';
+    margin-bottom: 16px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    color: #171219;
+  }
+  .receipt_list {
+    padding-right: 42px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+  }
+  .receipt_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 48px;
+    border-bottom: 1px solid rgba(23, 18, 25, 0.1);
+    .name {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.01em;
+      color: #171219;
+    }
+    .quantity {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.01em;
+      color: #171219;
+    }
+
+  }
+
+  .modal__image {
+    width: 100%;
+    max-width: 600px;
+    max-height: 600px;
+    min-height: 300px;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: flex;
+    object-position: center;
+  }
+
+  .desc {
+    font-family: "Gilroy R";
+    margin: 48px 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: #171219;
+  }
+  .main_list {
+    padding-right: 42px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    .receipt_item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 56px;
+      margin-bottom: 24px;
+      border: none;
+      .name {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.01em;
+        color: #171219;
+      }
+      .number {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        border-radius: 50%;
+        background-color: #E8E8E8;
+        margin-right: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          font-family: 'Gilroy Bold';
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 28px;
+          letter-spacing: 0.01em;
+          color: #171219;
+        }
+      }
+
+    }
+  }
+
+  &.show {
+    display: block;
+  }
+
+}

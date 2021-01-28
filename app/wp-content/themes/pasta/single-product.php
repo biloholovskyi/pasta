@@ -171,10 +171,10 @@
         foreach ($posts as $post) {
           setup_postdata($post);
           ?>
-          <div class="item">
+          <a href="<?php the_permalink(); ?>" class="item">
             <img class="slider_img" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="icon">
             <p class="slider_desc"><?php the_title() ?></p>
-          </div>
+          </a>
 
           <?php
         }

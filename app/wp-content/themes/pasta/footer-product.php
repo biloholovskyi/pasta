@@ -1,16 +1,18 @@
 <footer class="footer footer_product">
+  <div class="border"></div>
   <div class="left">
     <div>© ОАО «GoodNut» 2020 г.</div>
-    <div class="border">/</div>
+    <div> / </div>
     <a href="#" target="_blank" class="politics">Политика конфиденциальности</a>
   </div>
   <div class="right">
-    <a class="social" href="#"><img src="./media/icon/yt.svg" alt="icon"></a>
-    <a class="social" href="#"><img src="./media/icon/vk.svg" alt="icon"></a>
-    <a class="social" href="#"><img src="./media/icon/fb.svg" alt="icon"></a>
-    <a class="social" href="#"><img src="./media/icon/twitter.svg" alt="icon"></a>
+    <a class="social" href="https://www.instagram.com/goodnutkzn/?hl=ru" target="_blank"><img src="<?php echo get_template_directory_uri() . '/media/icon/yt.svg'; ?>" alt="icon"></a>
+<!--    <a class="social" href="#"><img src="./media/icon/vk.svg" alt="icon"></a>-->
+<!--    <a class="social" href="#"><img src="./media/icon/fb.svg" alt="icon"></a>-->
+<!--    <a class="social" href="#"><img src="./media/icon/twitter.svg" alt="icon"></a>-->
   </div>
 </footer>
+
 </div>
 
 <style>
@@ -62,14 +64,14 @@
 
     var myPin<?php echo $post->ID; ?> = new ymaps.Placemark([<?php echo get_field('contact_coordination'); ?>],
       {
-        balloonContentHeader: 'MOTODOM',
-        balloonContentBody: 'MOTODOM',
-        balloonContentFooter: 'MOTODOM',
-        hintContent: 'MOTODOM'
+        balloonContentHeader: 'Pasta',
+        balloonContentBody: 'Pasta',
+        balloonContentFooter: 'Pasta',
+        hintContent: 'Pasta'
       },
       {
         iconLayout: 'default#image',
-        iconImageHref: '../wp-content/themes/motodom/media/icon/newPin.png',
+        iconImageHref: '../wp-content/themes/pasta/media/icon/newPin.png',
         iconImageSize: [83.14, 64],
         iconImageOffset: [0, 0]
       });

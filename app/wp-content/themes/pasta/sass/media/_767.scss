@@ -194,4 +194,8 @@
   .alert-modal__body p {
     font-size: 20px;
   }
+  .receipt_modal--overlay {
+    padding: 50px;
+    z-index: 30;
+  }
 }

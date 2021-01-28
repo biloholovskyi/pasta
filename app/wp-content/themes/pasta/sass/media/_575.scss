@@ -214,4 +214,33 @@
   .alert-modal__body p {
     font-size: 16px;
   }
+  .receipt_modal--overlay {
+    padding: 30px 0px;
+    .close {
+      width: 40px;
+      height: 40px;
+    }
+    .modal_title {
+      font-size: 26px;
+      line-height: 33px;
+      padding-right: 0;
+    }
+    .receipt_list {
+      padding-right: 0;
+    }
+    .modal__image {
+      min-height: 250px;
+    }
+    .main_list {
+      .receipt_item {
+        .name {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+    .desc {
+      font-size: 14px;
+    }
+  }
 }

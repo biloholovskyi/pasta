@@ -85,11 +85,11 @@
     <a href="#" target="_blank" class="politics">Политика конфиденциальности</a>
   </div>
   <div class="right">
-    <a class="social" href="#"><img src="<?php echo get_template_directory_uri() . '/media/icon/yt.svg'; ?>"
+    <a class="social" href="https://www.instagram.com/goodnutkzn/?hl=ru" target="_blank"><img src="<?php echo get_template_directory_uri() . '/media/icon/yt.svg'; ?>"
                                     alt="icon"></a>
-    <a class="social" href="#"><img src="<?php echo get_template_directory_uri() . '/media/icon/vk.svg'; ?>" alt="icon"></a>
-    <a class="social" href="#"><img src="<?php echo get_template_directory_uri() . '/media/icon/fb.svg'; ?>" alt="icon"></a>
-    <a class="social" href="#"><img src="<?php echo get_template_directory_uri() . '/media/icon/twitter.svg'; ?>" alt="icon"></a>
+<!--    <a class="social" href="#"><img src="--><?php //echo get_template_directory_uri() . '/media/icon/vk.svg'; ?><!--" alt="icon"></a>-->
+<!--    <a class="social" href="#"><img src="--><?php //echo get_template_directory_uri() . '/media/icon/fb.svg'; ?><!--" alt="icon"></a>-->
+<!--    <a class="social" href="#"><img src="--><?php //echo get_template_directory_uri() . '/media/icon/twitter.svg'; ?><!--" alt="icon"></a>-->
   </div>
 </footer>
 
