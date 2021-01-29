@@ -184,8 +184,7 @@
     </div>
   </div>
 
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=<ваш API-ключ>&lang=ru_RU"
-          type="text/javascript"></script>
+
   <div class="shop_block">
     <div class="container">
       <div class="row">
@@ -200,13 +199,12 @@
               <div class="news_tab--head">
                 <div class="tabs">
 
-
                   <?php
                     $args = array(
-                      'numberposts' => -1,
+                      'numberposts' => -1, // если -1 то выводит все
                       'orderby' => 'date',
                       'order' => 'DESC',
-                      'post_type' => 'contact',
+                      'post_type' => 'contact', // тип поста
                       'suppress_filters' => true,
                     );
 
@@ -214,16 +212,24 @@
                     $contact_count = 0;
                     foreach ($posts as $post) {
                       setup_postdata($post);
+                      ?>
+
+                      <?php
+                      $acc = CFS()->get('city_name');
+                      $item = get_the_ID();
                       $contact_count++;
                       ?>
-                      <div class="tab <?php if ($contact_count == 1) { echo 'active'; } ?>" id="tab-<?php the_ID(); ?>"><?php the_title(); ?></div>
+                      <div class="tab <?php if ($contact_count == 1) { echo 'active'; } ?>" id="tab-<?php echo $item; ?>"><?php echo $acc; ?></div>
+                      <?php
+
+                      ?>
                       <?php
                     }
                     wp_reset_postdata(); // сброс
                   ?>
+
                 </div>
               </div>
-
 
 
               <?php
@@ -236,39 +242,49 @@
                 );
 
                 $posts = get_posts($args);
-                $item = get_the_ID();
-                $contact = 0;
-
+                $contact_count = 0;
                 foreach ($posts as $post) {
                   setup_postdata($post);
-                  $item_cat = get_field('city_item');
-                  $contact++;
                   ?>
-                  <div class="news_tab--body <?php if ($contact == 1) {
-                    echo 'show';
-                  } ?>" id="body-<?php echo $item_cat->ID; ?>">
+
+                  <?php
+                  $acc = CFS()->get('city_name');
+                  $item = get_the_ID();
+                  $contact_count++;
+                  ?>
+                  <div class="news_tab--body <?php if ($contact_count == 1) { echo 'show'; } ?>" id="body-<?php echo $item; ?>">
+                    <?php
+
+                    ?>
 
                     <?php
-                      $acc = CFS()->get('city');
+                      $acc = CFS()->get('address_loop');
+                      $i = get_the_ID();
+                      $id = 0;
                       if (!empty($acc)) {
-                        foreach ($acc as $one_add) {
+                        foreach ($acc as $one_acc) {
+                          $id++;
                           ?>
-                          <div class="city_item">
-                            <div class="name"><?php echo $one_add['name']; ?></div>
-                            <div class="address"><?php echo $one_add['add']; ?></div>
+                          <div class="city_item" id="city-<?php echo $i + $id; ?>">
+                            <div class="name"><?php echo $one_acc['street']; ?></div>
+                            <div class="address"><?php echo $one_acc['add']; ?></div>
                           </div>
                           <?php
                         }
                       }
                     ?>
-                  </div>
 
+
+                  </div>
                   <?php
                 }
                 wp_reset_postdata(); // сброс
               ?>
+
+
             </div>
 
+            <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
 
             <?php
@@ -282,14 +298,28 @@
 
               $posts = get_posts($args);
               $contact_count_map = 0;
+              $item = get_the_ID();
               foreach ($posts as $post) {
                 setup_postdata($post);
-                $contact_count_map++;
+
                 ?>
 
-                <div id="map-<?php echo $post->ID; ?>" class="map <?php if ($contact_count_map == 1) {
-                  echo ' active';
-                } ?>"></div>
+                <?php
+                $acc = CFS()->get('address_loop');
+                $i = get_the_ID();
+                $id = 0;
+                $contact_count_map = 0;
+                if (!empty($acc)) {
+                  foreach ($acc as $one_acc) {
+                    $id++;
+                    $contact_count_map++;
+                    ?>
+                    <div id="map-<?php echo $i + $id; ?>" class="map <?php if ($contact_count_map == 1) { echo 'active'; } ?>"></div>
+                    <?php
+                  }
+                }
+                ?>
+
 
                 <?php
               }
@@ -299,6 +329,7 @@
             <img class="cookie cookie-1" src="<?php echo $img1; ?>" alt="image">
 
           </div>
+
           <div class="shop_block--mobile">
             <?php
               $args = array(

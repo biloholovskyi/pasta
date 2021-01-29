@@ -2,14 +2,15 @@
   <div class="border"></div>
   <div class="left">
     <div>© ОАО «GoodNut» 2020 г.</div>
-    <div> / </div>
+    <div> /</div>
     <a href="#" target="_blank" class="politics">Политика конфиденциальности</a>
   </div>
   <div class="right">
-    <a class="social" href="https://www.instagram.com/goodnutkzn/?hl=ru" target="_blank"><img src="<?php echo get_template_directory_uri() . '/media/icon/yt.svg'; ?>" alt="icon"></a>
-<!--    <a class="social" href="#"><img src="./media/icon/vk.svg" alt="icon"></a>-->
-<!--    <a class="social" href="#"><img src="./media/icon/fb.svg" alt="icon"></a>-->
-<!--    <a class="social" href="#"><img src="./media/icon/twitter.svg" alt="icon"></a>-->
+    <a class="social" href="https://www.instagram.com/goodnutkzn/?hl=ru" target="_blank"><img
+        src="<?php echo get_template_directory_uri() . '/media/icon/yt.svg'; ?>" alt="icon"></a>
+    <!--    <a class="social" href="#"><img src="./media/icon/vk.svg" alt="icon"></a>-->
+    <!--    <a class="social" href="#"><img src="./media/icon/fb.svg" alt="icon"></a>-->
+    <!--    <a class="social" href="#"><img src="./media/icon/twitter.svg" alt="icon"></a>-->
   </div>
 </footer>
 
@@ -32,28 +33,42 @@
 <!--<script src="buildjs/index.js"></script>-->
 <script>
   ymaps.ready(init);
-  function init(){
+
+  function init() {
     <?php
     $args = array(
       'numberposts' => -1,
-      'orderby'     => 'date',
-      'order'       => 'DESC',
-      'post_type'   => 'contact',
+      'orderby' => 'date',
+      'order' => 'DESC',
+      'post_type' => 'contact',
       'suppress_filters' => true,
     );
 
-    $posts = get_posts( $args );
+    $posts = get_posts($args);
     foreach($posts as $post){ setup_postdata($post);
     ?>
 
-    var myMap<?php echo $post->ID; ?> = new ymaps.Map("map-<?php echo $post->ID; ?>", {
-      center: [<?php echo get_field('contact_coordination'); ?>],
-      zoom: 17
-    });
+    <?php
+      $acc = CFS()->get('address_loop');
+      $i = get_the_ID();
+      $id = 0;
+      if (!empty($acc)) {
+      foreach ($acc as $one_acc) {
+      $id++;
+    ?>
 
-    myMap<?php echo $post->ID; ?>.behaviors.disable(['drag', 'scrollZoom', 'dblClickZoom']);
+        var myMap<?php echo $i + $id; ?> = new ymaps.Map("map-<?php echo $i + $id; ?>", {
+          center: [<?php echo $one_acc['coordinate']; ?>],
+          zoom: 17
+        });
 
-    myMap<?php echo $post->ID; ?>.controls
+
+
+
+
+    myMap<?php echo $i + $id; ?>.behaviors.disable(['drag', 'scrollZoom', 'dblClickZoom']);
+
+    myMap<?php echo $i + $id; ?>.controls
       .remove('trafficControl')
       .remove('fullscreenControl')
       .remove('rulerControl')
@@ -62,21 +77,27 @@
       .remove('zoomControl')
       .remove('geolocationControl');
 
-    var myPin<?php echo $post->ID; ?> = new ymaps.Placemark([<?php echo get_field('contact_coordination'); ?>],
-      {
-        balloonContentHeader: 'Pasta',
-        balloonContentBody: 'Pasta',
-        balloonContentFooter: 'Pasta',
-        hintContent: 'Pasta'
-      },
-      {
-        iconLayout: 'default#image',
-        iconImageHref: '../wp-content/themes/pasta/media/icon/newPin.png',
-        iconImageSize: [83.14, 64],
-        iconImageOffset: [0, 0]
-      });
+    //var myPin<?php //echo $i + $id; ?>// = new ymaps.Placemark([<?php //echo $one_acc['coordinate']; ?>//],
+    //  {
+    //    balloonContentHeader: 'Pasta',
+    //    balloonContentBody: 'Pasta',
+    //    balloonContentFooter: 'Pasta',
+    //    hintContent: 'Pasta'
+    //  },
+    //  {
+    //    iconLayout: 'default#image',
+    //    iconImageHref: '../wp-content/themes/pasta/media/icon/newPin.png',
+    //    iconImageSize: [83.14, 64],
+    //    iconImageOffset: [0, 0]
+    //  });
 
-    myMap<?php echo $post->ID; ?>.geoObjects.add(myPin<?php echo $post->ID; ?>);
+    //myMap<?php //echo $i + $id; ?>//.geoObjects.add(myPin<?php //echo $i + $id; ?>//);
+
+    <?php
+        }
+      }
+    ?>
+
     <?php
     }
     wp_reset_postdata(); // сброс
@@ -91,7 +112,7 @@
     sizeMap();
   });
 
-  function sizeMap () {
+  function sizeMap() {
     let windowWidth = $(window).width();
     let containerWidth = $('.container').width();
     let wrapper = $('.contact-page__wrapper').width();

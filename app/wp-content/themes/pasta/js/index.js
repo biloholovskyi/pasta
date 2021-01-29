@@ -1,5 +1,5 @@
 import {inputForm} from './input';
-import {switchTabs} from "./tabs";
+import {switchTabs, switchMaps} from "./tabs";
 
 $(document).ready(() => {
 
@@ -7,9 +7,14 @@ $(document).ready(() => {
     switchTabs(e)
   });
 
+  $('.shop_block--content .news_tab--body .city_item').on('click', (e) => {
+    switchMaps(e)
+  });
+
   $('.form_section input').on('input', (e) => inputForm(e));
 
   $('.form_section textarea').on('input', (e) => inputForm(e));
+
 
   $('.recipe').owlCarousel({
     loop: false,
@@ -54,8 +59,8 @@ $(document).ready(() => {
     dots: false,
     items: 1,
     loop: true,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
+    animateOut: 'slideOutDown',
+    animateIn: 'flipInX',
     mouseDrag: false,
     touchDrag: false,
     responsive: {
