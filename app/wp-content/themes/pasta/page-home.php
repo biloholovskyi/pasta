@@ -12,7 +12,7 @@
 <!--  <div class="circle-3"></div>-->
 <!--</div>-->
 
-<div class="owl-carousel owl-theme main" id="main">
+<div class="owl-carousel owl-theme main animate__animated " id="main">
   <?php
     $args = array(
       'numberposts' => -1, // если -1 то выводит все

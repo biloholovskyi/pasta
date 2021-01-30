@@ -59,10 +59,11 @@ $(document).ready(() => {
     dots: false,
     items: 1,
     loop: true,
-    animateOut: 'slideOutDown',
-    animateIn: 'flipInX',
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
     mouseDrag: false,
     touchDrag: false,
+    singleItem: true,
     responsive: {
       0: {
         mouseDrag: true,
@@ -117,23 +118,36 @@ $(document).on('click', function (e) {
 });
 
 
+
 // change slide on mouse scroll
 let owl = $('.main');
 //let circle = document.querySelector('.circle_border');
+let anim = document.querySelector('.main');
+
 document.querySelector('.main').onwheel = function () {
 
   if (event.wheelDelta > 0) {
 
     //circle.classList.add('rotate');
     //setTimeout(() => circle.classList.remove('rotate'), 2000);
+    
 
-    owl.trigger('next.owl', [1000]);
+    //setTimeout(() =>anim.classList.add('animate__slideInUp'), 1000);
+    //setTimeout(() => anim.classList.remove('animate__slideInUp'), 2000);
+
+    setTimeout(() => owl.trigger('next.owl'), 1000);
+
   } else {
 
     //circle.classList.add('rotate');
     //setTimeout(() => circle.classList.remove('rotate'), 2000);
 
-    owl.trigger('prev.owl', [1000]);
+    //setTimeout(() =>anim.classList.add('animate__slideInUp'), 1000);
+    //setTimeout(() => anim.classList.remove('animate__slideInUp'), 2000);
+
+    setTimeout(() => owl.trigger('prev.owl'), 1000);
   }
   event.preventDefault();
 };
+
+
