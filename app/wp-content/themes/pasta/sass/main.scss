@@ -19,6 +19,12 @@ html {
   margin-top: 0 !important;
 }
 
+body {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 a,
 a:hover,
 a:focus,

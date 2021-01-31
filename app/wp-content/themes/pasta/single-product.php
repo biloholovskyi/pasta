@@ -17,7 +17,7 @@
 
 <div style="overflow: hidden; background-color: <?php the_field('bg') ?>">
   <div class="product">
-    <a href="/" class="back">
+    <a href="/" class="back animate__animated animate__slideInDown ">
       <div class="arrow">
         <img src="<?php echo get_template_directory_uri() . '/media/icon/arrow.svg'; ?>" alt="icon">
       </div>
@@ -27,7 +27,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-last order-lg-first order-md-first">
-            <div class="product_title">
+            <div class="product_title animate__animated animate__slideInLeft">
               <div class="name"><?php the_title() ?></div>
               <div class="desc"><?php the_field('desc'); ?></div>
               <div class="links_shop">
@@ -49,7 +49,7 @@
             </div>
           </div>
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 order-first">
-            <div class="product_main">
+            <div class="product_main animate__animated animate__slideInLeft">
               <div class="item">
                 <img class="pasta" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="image">
                 <img class="shadow" src="<?php echo get_template_directory_uri() . '/media/image/shadow.svg'; ?>"

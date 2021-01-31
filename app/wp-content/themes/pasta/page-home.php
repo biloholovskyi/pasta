@@ -10,6 +10,10 @@
 <!--  <div class="circle"></div>-->
 <!--  <div class="circle-2"></div>-->
 <!--  <div class="circle-3"></div>-->
+<!--  <div class="circle-4"></div>-->
+<!--  <div class="circle-5"></div>-->
+<!--  <div class="circle-6 hidden__circle"></div>-->
+<!--  <div class="circle-7 hidden__circle"></div>-->
 <!--</div>-->
 
 <div class="owl-carousel owl-theme main animate__animated " id="main">
@@ -63,9 +67,9 @@
             <img class="cookie cookie-2" src="<?php echo $img2; ?>"
                  alt="image">
           </div>
-          <img class="cookie cookie-3" src="<?php echo $img3; ?>"
+          <img class="cookie cookie-3 animate__animated" src="<?php echo $img3; ?>"
                alt="image">
-          <img class="cookie cookie-4" src="<?php echo $img4; ?>"
+          <img class="cookie cookie-4 animate__animated" src="<?php echo $img4; ?>"
                alt="image">
         </div>
       </div>

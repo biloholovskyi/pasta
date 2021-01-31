@@ -59,8 +59,8 @@ $(document).ready(() => {
     dots: false,
     items: 1,
     loop: true,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
+    animateOut: 'slideOutDown',
+    animateIn: 'flipInX',
     mouseDrag: false,
     touchDrag: false,
     singleItem: true,
@@ -121,30 +121,64 @@ $(document).on('click', function (e) {
 
 // change slide on mouse scroll
 let owl = $('.main');
-//let circle = document.querySelector('.circle_border');
+let circle = document.querySelector('.circle_border');
 let anim = document.querySelector('.main');
+
+let cookie = document.getElementsByClassName('cookie-3');
+let cookie2 = document.getElementsByClassName('cookie-4');
 
 document.querySelector('.main').onwheel = function () {
 
   if (event.wheelDelta > 0) {
 
-    //circle.classList.add('rotate');
-    //setTimeout(() => circle.classList.remove('rotate'), 2000);
-    
+    // block with animated circle
+      //setTimeout(() => circle.classList.add('rotate'), 1000);
+      //setTimeout(() => circle.classList.remove('rotate'), 2000);
 
-    //setTimeout(() =>anim.classList.add('animate__slideInUp'), 1000);
-    //setTimeout(() => anim.classList.remove('animate__slideInUp'), 2000);
+    // block with animated cookies (parallax)
+    for (let i = 0; i < cookie.length; i++)
+    {
+      setTimeout(() => cookie[i].className += " animate__slideInUp", 1100);
+      setTimeout(() => cookie[i].classList.remove("animate__slideInUp"), 2500);
+    }
 
+    for (let i = 0; i < cookie2.length; i++)
+    {
+      setTimeout(() => cookie2[i].className += " animate__slideInUp", 1100);
+      setTimeout(() => cookie2[i].classList.remove("animate__slideInUp"), 2500);
+    }
+
+    // block for change slider from Down to Up
+    setTimeout(() => anim.classList.add('animate__slideInUp'), 1000);
+    setTimeout(() => anim.classList.remove('animate__slideInUp'), 2000);
+
+    // change slide on MouseWheel
     setTimeout(() => owl.trigger('next.owl'), 1000);
 
   } else {
 
-    //circle.classList.add('rotate');
-    //setTimeout(() => circle.classList.remove('rotate'), 2000);
+    // block with animated circle
+      //setTimeout(() => circle.classList.add('rotate'), 1000);
+      //setTimeout(() => circle.classList.remove('rotate'), 1000);
 
-    //setTimeout(() =>anim.classList.add('animate__slideInUp'), 1000);
-    //setTimeout(() => anim.classList.remove('animate__slideInUp'), 2000);
+    // block with animated cookies (parallax)
+    for (let i = 0; i < cookie.length; i++)
+    {
+      setTimeout(() => cookie[i].className += " animate__slideInUp", 1100);
+      setTimeout(() => cookie[i].classList.remove("animate__slideInUp"), 2500);
+    }
 
+    for (let i = 0; i < cookie2.length; i++)
+    {
+      setTimeout(() => cookie2[i].className += " animate__slideInUp", 1100);
+      setTimeout(() => cookie2[i].classList.remove("animate__slideInUp"), 2500);
+    }
+
+    // block for change slider from Down to Up
+    setTimeout(() =>anim.classList.add('animate__slideInUp'), 1000);
+    setTimeout(() => anim.classList.remove('animate__slideInUp'), 2000);
+
+    // change slide on MouseWheel
     setTimeout(() => owl.trigger('prev.owl'), 1000);
   }
   event.preventDefault();

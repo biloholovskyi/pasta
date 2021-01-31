@@ -246,10 +246,14 @@
   margin: 0 auto;
   min-height: 650px;
   border-radius: 50%;
-  border: 1px solid rgba(220,210,190,1);
+  //border: 1px solid rgba(220,210,190,1);
   opacity: .9;
   z-index: 999;
   transform: translate(-50%, -50%);
+  background-image: url("../media/image/hidd.svg");
+  background-position: center;
+  background-size: cover;
+
   .circle {
     width: 16px;
     height: 16px;
@@ -260,28 +264,70 @@
     top: 50%;
     transform: translateY(-50%);
   }
+
   .circle-2 {
     width: 12px;
     height: 12px;
     background-color: #b0a799;
     border-radius: 50%;
     position: absolute;
-    right: 1px;
-    top: 60%;
+    right: 8px;
+    top: 64%;
   }
+
   .circle-3 {
     width: 12px;
     height: 12px;
     background-color: #b0a799;
     border-radius: 50%;
     position: absolute;
-    right: 1px;
-    top: 39%;
+    right: 6px;
+    top: 35%;
+  }
+
+  .circle-4 {
+    width: 6px;
+    height: 6px;
+    background-color: #b0a799;
+    border-radius: 50%;
+    position: absolute;
+    right: 46px;
+    top: 23%;
+  }
+
+  .circle-5 {
+    width: 6px;
+    height: 6px;
+    background-color: #b0a799;
+    border-radius: 50%;
+    position: absolute;
+    right: 46px;
+    top: 76%;
+  }
+
+  .circle-6 {
+    width: 6px;
+    height: 6px;
+    background-color: #b0a799;
+    border-radius: 50%;
+    position: absolute;
+    right: 99px;
+    top: 13%;
+  }
+
+  .circle-7 {
+    width: 6px;
+    height: 6px;
+    background-color: #b0a799;
+    border-radius: 50%;
+    position: absolute;
+    right: 98px;
+    top: 86%;
   }
 
   &.rotate {
-    transform:  translate(-50%, -50%) rotate(360deg);
-    transition: 2s;
+    transform:  translate(-50%, -50%) rotate(-20deg);
+    transition: .3s;
   }
 
 }
