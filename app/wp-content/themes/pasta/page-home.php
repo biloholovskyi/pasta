@@ -86,7 +86,29 @@
   <div class="left">
     <div>© ОАО «GoodNut» 2020 г.</div>
     <div class="border">/</div>
-    <a href="#" target="_blank" class="politics">Политика конфиденциальности</a>
+
+    <?php
+      $args = array(
+        'numberposts' => 1, // если -1 то выводит все
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_type' => 'politics', // тип поста
+        'suppress_filters' => true,
+      );
+
+      $posts = get_posts($args);
+
+      foreach ($posts as $post) {
+      setup_postdata($post);
+    ?>
+
+    <a href="<?php the_field('politics'); ?>" target="_blank" class="politics">Политика конфиденциальности</a>
+
+        <?php
+      }
+      wp_reset_postdata(); // сброс
+    ?>
+
   </div>
   <div class="right">
     <a class="social" href="https://www.instagram.com/goodnutkzn/?hl=ru" target="_blank"><img src="<?php echo get_template_directory_uri() . '/media/icon/yt.svg'; ?>"

@@ -1,6 +1,7 @@
 import {inputForm} from './input';
 import {switchTabs, switchMaps} from "./tabs";
 
+
 $(document).ready(() => {
 
   $('.news_tab--head .tabs .tab').on('click', (e) => {
@@ -59,8 +60,9 @@ $(document).ready(() => {
     dots: false,
     items: 1,
     loop: true,
-    animateOut: 'slideOutDown',
-    animateIn: 'flipInX',
+    autoplayHoverPause: true,
+    animateOut: 'slideOutUp',
+    animateIn: 'slideInUp',
     mouseDrag: false,
     touchDrag: false,
     singleItem: true,
@@ -183,5 +185,6 @@ document.querySelector('.main').onwheel = function () {
   }
   event.preventDefault();
 };
+
 
 

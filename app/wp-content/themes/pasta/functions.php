@@ -11,7 +11,7 @@ function menu() {
   register_nav_menu('header', 'Главное меню в шапке');
   register_nav_menu('footer', 'Меню в подвале');
   // подключаем обложку поста
-  add_theme_support( 'post-thumbnails', array('post', 'product', 'recipes', 'contact') );
+  add_theme_support( 'post-thumbnails', array('post', 'product', 'recipes', 'contact', 'politics') );
   // удаляем ... в кратком описание постов
   add_filter('excerpt_more', function($more) {
     return '';
@@ -149,6 +149,45 @@ function register_post_types(){
     'rest_base'           => null, // $post_type. C WP 4.7
     'menu_position'       => 4,
     'menu_icon'           => 'dashicons-translation',
+    //'capability_type'   => 'post',
+    //'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
+    //'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+    'hierarchical'        => false,
+    'supports'            => array('title'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+    'taxonomies'          => array(),
+    'has_archive'         => false,
+    'rewrite'             => true,
+    'query_var'           => true,
+  ) );
+
+  register_post_type('politics', array(
+    'label'  => null,
+    'labels' => array(
+      'name'               => 'Политика конфиденциальности', // основное название для типа записи
+      'singular_name'      => 'Политика конфиденциальности', // название для одной записи этого типа
+      'add_new'            => 'Добавить документ', // для добавления новой записи
+      'add_new_item'       => 'Добавление документа', // заголовка у вновь создаваемой записи в админ-панели.
+      'edit_item'          => 'Редактирование документа', // для редактирования типа записи
+      'new_item'           => 'Новий документ', // текст новой записи
+      'view_item'          => 'Смотреть документ', // для просмотра записи этого типа.
+      'search_items'       => 'Искать документ', // для поиска по этим типам записи
+      'not_found'          => 'Не найден документ', // если в результате поиска ничего не было найдено
+      'not_found_in_trash' => 'Не найден документ в корзине', // если не было найдено в корзине
+      'parent_item_colon'  => '', // для родителей (у древовидных типов)
+      'menu_name'          => 'Политика конфиденциальности', // название меню
+    ),
+    'description'         => '',
+    'public'              => true,
+    'publicly_queryable'  => true, // зависит от public
+    'exclude_from_search' => true, // зависит от public
+    'show_ui'             => true, // зависит от public
+    'show_in_menu'        => true, // показывать ли в меню адмнки
+    'show_in_admin_bar'   => true, // по умолчанию значение show_in_menu
+    'show_in_nav_menus'   => true, // зависит от public
+    'show_in_rest'        => null, // добавить в REST API. C WP 4.7
+    'rest_base'           => null, // $post_type. C WP 4.7
+    'menu_position'       => 5,
+    'menu_icon'           => 'dashicons-cloud-upload',
     //'capability_type'   => 'post',
     //'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
     //'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
