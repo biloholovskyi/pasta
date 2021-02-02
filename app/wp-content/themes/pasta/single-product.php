@@ -30,7 +30,7 @@
             <div class="product_title animate__animated animate__slideInLeft">
               <div class="name"><?php the_title() ?></div>
               <div class="desc"><?php the_field('desc'); ?></div>
-              <div class="links_shop">
+              <div class="links_shop" style="margin-bottom: 24px">
                 <a target="_blank" href="<?php the_field('wildberries'); ?>" class="shop">
                   <img src="<?php echo get_template_directory_uri() . '/media/icon/shop.svg'; ?>" alt="icon">
                   <div class="info">
@@ -43,6 +43,15 @@
                   <div class="info">
                     <p>Kazan Express</p>
                     <p>kazanexpress.ru</p>
+                  </div>
+                </a>
+              </div>
+              <div class="links_shop">
+                <a target="_blank" href="<?php the_field('ozon'); ?>" class="shop">
+                  <img src="<?php echo get_template_directory_uri() . '/media/icon/shop2.svg'; ?>" alt="icon">
+                  <div class="info">
+                    <p>Ozon</p>
+                    <p>ozon.ru</p>
                   </div>
                 </a>
               </div>
@@ -265,7 +274,7 @@
                         foreach ($acc as $one_acc) {
                           $id++;
                           ?>
-                          <div class="city_item" id="city-<?php echo $i + $id; ?>">
+                          <div class="city_item" id="city-<?php echo $item + $id; ?>">
                             <div class="name"><?php echo $one_acc['street']; ?></div>
                             <div class="address"><?php echo $one_acc['add']; ?></div>
                           </div>
@@ -314,7 +323,7 @@
                     $id++;
                     $contact_count_map++;
                     ?>
-                    <div id="map-<?php echo $i + $id; ?>" class="map <?php if ($contact_count_map == 1) { echo 'active'; } ?>"></div>
+                    <div id="map-<?php echo $i + $id; ?>" class="map <?php if ($i + $id === 185 && $i + $id !== $i) { echo 'active'; } ?>"></div>
                     <?php
                   }
                 }
@@ -350,13 +359,13 @@
                     src="<?php echo get_template_directory_uri() . '/media/icon/arrow_mobile.svg'; ?>" alt="icon">
                   <div class="city_list">
                     <?php
-                      $acc = CFS()->get('city');
+                      $acc = CFS()->get('address_loop');
                       if (!empty($acc)) {
-                        foreach ($acc as $one_add) {
+                        foreach ($acc as $one_acc) {
                           ?>
                           <div class="city_item">
-                            <div class="name"><?php echo $one_add['name']; ?></div>
-                            <div class="address"><?php echo $one_add['add']; ?></div>
+                            <div class="name"><?php echo $one_acc['street']; ?></div>
+                            <div class="address"><?php echo $one_acc['add']; ?></div>
                           </div>
                           <?php
                         }
@@ -381,8 +390,6 @@
         <div class="col-12">
           <div class="buy">
             <h3>Купить онлайн</h3>
-            <p class="buy_desc">Aliquam molestie justo velit, in euismod urna iaculis sit amet. Donec efficitur
-              fermentum fermentum.</p>
             <div class="links_shop">
               <a target="_blank" href="<?php the_field('wildberries'); ?>" class="shop">
                 <img src="<?php echo get_template_directory_uri() . '/media/icon/shop.svg'; ?>" alt="icon">
@@ -391,11 +398,18 @@
                   <p>wildberries.ru</p>
                 </div>
               </a>
-              <a target="_blank" href="<?php the_field('kazan'); ?>" class="shop">
+              <a style="margin-right: 24px" target="_blank" href="<?php the_field('kazan'); ?>" class="shop">
                 <img src="<?php echo get_template_directory_uri() . '/media/icon/shop2.svg'; ?>" alt="icon">
                 <div class="info">
                   <p>Kazan Express</p>
                   <p>kazanexpress.ru</p>
+                </div>
+              </a>
+              <a target="_blank" href="<?php the_field('ozon'); ?>" class="shop">
+                <img src="<?php echo get_template_directory_uri() . '/media/icon/shop2.svg'; ?>" alt="icon">
+                <div class="info">
+                  <p>Ozon</p>
+                  <p>ozon.ru</p>
                 </div>
               </a>
             </div>

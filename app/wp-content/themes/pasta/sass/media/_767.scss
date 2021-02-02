@@ -97,7 +97,8 @@
     }
     .left {
       flex-direction: column;
-      .border {
+      text-align: center;
+      .slash {
         display: none;
       }
       .politics {
@@ -188,6 +189,7 @@
     border-top: 1px solid rgba(23,18,25,.1);
     bottom: 0;
   }
+
   .header_contact {
     position: relative;
   }
@@ -197,5 +199,15 @@
   .receipt_modal--overlay {
     padding: 50px;
     z-index: 30;
+  }
+
+  .product_title {
+    margin-top: 0;
+  }
+  .buy_online .buy .links_shop {
+    flex-wrap: wrap;
+    & .shop {
+      margin-right: 0!important;
+    }
   }
 }

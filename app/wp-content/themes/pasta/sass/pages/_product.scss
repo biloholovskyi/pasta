@@ -498,6 +498,7 @@
     //background: red;
     //height: 719px;
     display: none;
+    max-height: 718px!important;
     &.active {
       display: block;
     }
@@ -626,6 +627,8 @@
 // maps
 .ymaps-2-1-78-map {
   height: 718px!important;
+  width: 100%!important;
+  max-height: 718px!important;
 }
 //.ymaps-2-1-78-inner-panes {
 //  border-top-right-radius: 10px!important;
@@ -710,6 +713,7 @@
       line-height: 22px;
       letter-spacing: 0.01em;
       color: #171219;
+      text-align: right;
     }
 
   }
@@ -745,7 +749,7 @@
     .receipt_item {
       display: flex;
       align-items: flex-start;
-      justify-content: space-between;
+      justify-content: flex-start;
       width: 100%;
       min-height: 56px;
       margin-bottom: 24px;

@@ -253,7 +253,7 @@
   background-image: url("../media/image/hidd.svg");
   background-position: center;
   background-size: cover;
-
+  transition: 1s;
   .circle {
     width: 16px;
     height: 16px;
@@ -326,8 +326,12 @@
   }
 
   &.rotate {
-    transform:  translate(-50%, -50%) rotate(-20deg);
+    transform:  translate(-50%, -50%) rotate(-18deg);
     transition: .3s;
+  }
+
+  .hidden__circle {
+    display: none;
   }
 
 }

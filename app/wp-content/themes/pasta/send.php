@@ -16,7 +16,8 @@
   }
 
   $multiple_to_recipients = array(
-    'Duchkevuch90@gmail.com'
+    'goodnutrt@yandex.ru',
+    'albertgaifullin@gmail.com'
   );
 
   wp_mail($multiple_to_recipients, "Новая заявка", "Имя: ".$name." | Номер: ".$tel." | Коментарий: ".$text);

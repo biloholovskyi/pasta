@@ -1,8 +1,8 @@
 <footer class="footer footer_product">
   <div class="border"></div>
   <div class="left">
-    <div>© ОАО «GoodNut» 2020 г.</div>
-    <div style="margin: 0 8px"> / </div>
+    <div>ИП Ахмерова Р.С. ОГРНИП 317169000173513 </div>
+    <div class="slash" style="margin: 0 8px"> / </div>
 
     <?php
       $args = array(
@@ -28,11 +28,26 @@
 
   </div>
   <div class="right">
-    <a class="social" href="https://www.instagram.com/goodnutkzn/?hl=ru" target="_blank"><img
-        src="<?php echo get_template_directory_uri() . '/media/icon/yt.svg'; ?>" alt="icon"></a>
-    <!--    <a class="social" href="#"><img src="./media/icon/vk.svg" alt="icon"></a>-->
-    <!--    <a class="social" href="#"><img src="./media/icon/fb.svg" alt="icon"></a>-->
-    <!--    <a class="social" href="#"><img src="./media/icon/twitter.svg" alt="icon"></a>-->
+    <?php
+      $args = array(
+        'numberposts' => -1, // если -1 то выводит все
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_type' => 'social', // тип поста
+        'suppress_filters' => true,
+      );
+
+      $posts = get_posts($args);
+
+      foreach ($posts as $post) {
+      setup_postdata($post);
+    ?>
+    <a class="social" href="<?php the_field('link'); ?>" target="_blank"><img
+        src="<?php echo get_the_post_thumbnail_url(); ?>" alt="icon"></a>
+        <?php
+      }
+      wp_reset_postdata(); // сброс
+    ?>
   </div>
 </footer>
 

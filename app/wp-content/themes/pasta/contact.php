@@ -49,11 +49,11 @@
         <form class="form_section">
           <div class="input-wrapper">
             <div class="label">Ваше имя</div>
-            <input type="text" name="names" >
+            <input type="text" name="names" required>
           </div>
           <div class="input-wrapper">
             <div class="label">Номер телефона</div>
-            <input type="text" name="tel" >
+            <input type="text" name="tel" required>
           </div>
           <div class="input-wrapper textarea-wrapper">
             <div class="label textarea-label">Коментарий</div>
@@ -61,7 +61,7 @@
           </div>
           <div class="double">
             <input type="submit" value="Отправить" class="send">
-            <p>Нажимая “Отправить” вы соглашаетесь на все</p>
+            <p>Нажимая “Отправить”, Вы соглашаетесь с политикой конфиденциальности сайта.</p>
           </div>
         </form>
       </div>
@@ -78,8 +78,8 @@
 
 <footer class="footer footer_contact">
   <div class="left">
-    <div>© ОАО «GoodNut» 2020 г.</div>
-    <div class="border">/</div>
+    <div>ИП Ахмерова Р.С. ОГРНИП 317169000173513 </div>
+    <div class="slash" style="margin: 0 8px">/</div>
 
     <?php
       $args = array(
@@ -105,11 +105,27 @@
 
   </div>
   <div class="right">
-    <a class="social" href="https://www.instagram.com/goodnutkzn/?hl=ru" target="_blank"><img src="<?php echo get_template_directory_uri() . '/media/icon/yt.svg'; ?>"
-                                    alt="icon"></a>
-<!--    <a class="social" href="#"><img src="--><?php //echo get_template_directory_uri() . '/media/icon/vk.svg'; ?><!--" alt="icon"></a>-->
-<!--    <a class="social" href="#"><img src="--><?php //echo get_template_directory_uri() . '/media/icon/fb.svg'; ?><!--" alt="icon"></a>-->
-<!--    <a class="social" href="#"><img src="--><?php //echo get_template_directory_uri() . '/media/icon/twitter.svg'; ?><!--" alt="icon"></a>-->
+    <?php
+      $args = array(
+        'numberposts' => -1, // если -1 то выводит все
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_type' => 'social', // тип поста
+        'suppress_filters' => true,
+      );
+
+      $posts = get_posts($args);
+
+      foreach ($posts as $post) {
+        setup_postdata($post);
+        ?>
+        <a class="social" href="<?php the_field('link'); ?>" target="_blank"><img
+            src="<?php echo get_the_post_thumbnail_url(); ?>" alt="icon"></a>
+        <?php
+      }
+      wp_reset_postdata(); // сброс
+    ?>
+
   </div>
 </footer>
 

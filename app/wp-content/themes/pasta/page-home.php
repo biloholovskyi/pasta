@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-<!--<div class="circle_border">-->
+<div class="circle_border">
 <!--  <div class="circle"></div>-->
 <!--  <div class="circle-2"></div>-->
 <!--  <div class="circle-3"></div>-->
@@ -14,9 +14,9 @@
 <!--  <div class="circle-5"></div>-->
 <!--  <div class="circle-6 hidden__circle"></div>-->
 <!--  <div class="circle-7 hidden__circle"></div>-->
-<!--</div>-->
+</div>
 
-<div class="owl-carousel owl-theme main animate__animated " id="main">
+<div class="owl-carousel owl-theme main " id="main">
   <?php
     $args = array(
       'numberposts' => -1, // если -1 то выводит все
