@@ -395,6 +395,7 @@
   justify-content: space-between;
   background-color: #fff;
   //min-height: 600px;
+  overflow: hidden;
 
   .news_tab {
     flex: 1;
@@ -406,6 +407,7 @@
       padding: 24px 0 24px 24px;
       border-bottom: 1px solid rgba(23, 18, 25, 0.1);
       margin-bottom: 8px;
+      display: flex;
       .tabs {
         display: flex;
         align-items: center;
@@ -498,9 +500,11 @@
     //background: red;
     //height: 719px;
     display: none;
+    opacity: 0;
     max-height: 718px!important;
     &.active {
       display: block;
+      opacity: 1;
     }
   }
 

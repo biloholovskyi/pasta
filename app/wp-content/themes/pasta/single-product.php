@@ -274,10 +274,10 @@
                         foreach ($acc as $one_acc) {
                           $id++;
                           ?>
-                          <div class="city_item" id="city-<?php echo $item + $id; ?>">
-                            <div class="name"><?php echo $one_acc['street']; ?></div>
-                            <div class="address"><?php echo $one_acc['add']; ?></div>
-                          </div>
+                            <div class="city_item" id="city-<?php echo $i + $id; ?>">
+                              <div class="name"><?php echo $one_acc['street']; ?></div>
+                              <div class="address"><?php echo $one_acc['add']; ?></div>
+                            </div>
                           <?php
                         }
                       }
@@ -293,7 +293,7 @@
 
             </div>
 
-            <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+            <script src="https://api-maps.yandex.ru/2.1/?apikey=<ваш API-ключ>&lang=ru_RU" type="text/javascript"></script>
 
 
             <?php
@@ -323,7 +323,7 @@
                     $id++;
                     $contact_count_map++;
                     ?>
-                    <div id="map-<?php echo $i + $id; ?>" class="map <?php if ($i + $id === 185 && $i + $id !== $i) { echo 'active'; } ?>"></div>
+                    <div id="map-<?php echo $i + $id; ?>" class="map "></div>
                     <?php
                   }
                 }
@@ -418,5 +418,5 @@
       </div>
     </div>
   </div>
-
+  <div class="circle_border" style="display: none"></div>
 <?php get_footer('product'); ?>

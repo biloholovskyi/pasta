@@ -141,21 +141,21 @@
     ?>
   }
 
-  $(document).ready(function () {
-    sizeMap();
-  });
-
-  $(window).resize(function () {
-    sizeMap();
-  });
-
-  function sizeMap() {
-    let windowWidth = $(window).width();
-    let containerWidth = $('.container').width();
-    let wrapper = $('.contact-page__wrapper').width();
-    let mapWidth = windowWidth - ((windowWidth - containerWidth) / 2 + wrapper);
-
-    // $('.contact-page__map').css('width', mapWidth + 'px');
-  }
+  // $(document).ready(function () {
+  //   sizeMap();
+  // });
+  //
+  // $(window).resize(function () {
+  //   sizeMap();
+  // });
+  //
+  // function sizeMap() {
+  //   let windowWidth = $(window).width();
+  //   let containerWidth = $('.container').width();
+  //   let wrapper = $('.contact-page__wrapper').width();
+  //   let mapWidth = windowWidth - ((windowWidth - containerWidth) / 2 + wrapper);
+  //
+  //   // $('.contact-page__map').css('width', mapWidth + 'px');
+  // }
 </script>
 </html>

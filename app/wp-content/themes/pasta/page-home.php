@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-<div class="circle_border">
+<!--<div class="circle_border">-->
 <!--  <div class="circle"></div>-->
 <!--  <div class="circle-2"></div>-->
 <!--  <div class="circle-3"></div>-->
@@ -14,7 +14,7 @@
 <!--  <div class="circle-5"></div>-->
 <!--  <div class="circle-6 hidden__circle"></div>-->
 <!--  <div class="circle-7 hidden__circle"></div>-->
-</div>
+<!--</div>-->
 
 <div class="owl-carousel owl-theme main " id="main">
   <?php
@@ -111,11 +111,26 @@
 
   </div>
   <div class="right">
-    <a class="social" href="https://www.instagram.com/goodnutkzn/?hl=ru" target="_blank"><img src="<?php echo get_template_directory_uri() . '/media/icon/yt.svg'; ?>"
-                                    alt="icon"></a>
-<!--    <a class="social" href="#"><img src="--><?php //echo get_template_directory_uri() . '/media/icon/vk.svg'; ?><!--" alt="icon"></a>-->
-<!--    <a class="social" href="#"><img src="--><?php //echo get_template_directory_uri() . '/media/icon/fb.svg'; ?><!--" alt="icon"></a>-->
-<!--    <a class="social" href="#"><img src="--><?php //echo get_template_directory_uri() . '/media/icon/twitter.svg'; ?><!--" alt="icon"></a>-->
+    <?php
+      $args = array(
+        'numberposts' => -1, // если -1 то выводит все
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_type' => 'social', // тип поста
+        'suppress_filters' => true,
+      );
+
+      $posts = get_posts($args);
+
+      foreach ($posts as $post) {
+        setup_postdata($post);
+        ?>
+        <a class="social" href="<?php the_field('link'); ?>" target="_blank"><img
+            src="<?php echo get_the_post_thumbnail_url(); ?>" alt="icon"></a>
+        <?php
+      }
+      wp_reset_postdata(); // сброс
+    ?>
   </div>
 </footer>
 

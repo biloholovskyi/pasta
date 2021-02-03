@@ -29,4 +29,19 @@
       line-height: 48px;
     }
   }
+  .slider #slider {
+    .owl-stage {
+      .owl-item {
+        max-width: 300px!important;
+      }
+    }
+    .item {
+      img {
+        min-height: 300px;
+        max-width: 300px;
+        max-height: 300px;
+      }
+    }
+  }
+
 }

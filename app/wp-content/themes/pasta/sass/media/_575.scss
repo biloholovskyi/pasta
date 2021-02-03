@@ -134,6 +134,9 @@
         left: -64px;
         .owl-item {
           // max-width: none!important;
+          .slider_img {
+            min-height: unset;
+          }
         }
       }
       .owl-nav {
