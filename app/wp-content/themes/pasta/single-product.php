@@ -48,7 +48,7 @@
               </div>
               <div class="links_shop">
                 <a target="_blank" href="<?php the_field('ozon'); ?>" class="shop">
-                  <img src="<?php echo get_template_directory_uri() . '/media/icon/shop2.svg'; ?>" alt="icon">
+                  <img src="<?php echo get_template_directory_uri() . '/media/icon/ozon.svg'; ?>" alt="icon"> 
                   <div class="info">
                     <p>Ozon</p>
                     <p>ozon.ru</p>
@@ -406,7 +406,7 @@
                 </div>
               </a>
               <a target="_blank" href="<?php the_field('ozon'); ?>" class="shop">
-                <img src="<?php echo get_template_directory_uri() . '/media/icon/shop2.svg'; ?>" alt="icon">
+                <img src="<?php echo get_template_directory_uri() . '/media/icon/ozon.svg'; ?>" alt="icon">
                 <div class="info">
                   <p>Ozon</p>
                   <p>ozon.ru</p>

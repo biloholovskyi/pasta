@@ -8,6 +8,8 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <!--  <link rel="stylesheet" href="css/main.css">-->
 <!--  <link rel="stylesheet" href="css/owl.carousel.min.css">-->
 <!--  <link rel="stylesheet" href="css/owl.theme.default.min.css">-->
