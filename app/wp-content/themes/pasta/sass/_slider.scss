@@ -23,8 +23,9 @@
       width: 95%;
       right: 75px;
       display: flex;
-      -webkit-box-pack: justify;
       justify-content: space-between;
+      height: 0;
+      margin-bottom: 56px;
       .disabled {
         opacity: 0;
       }

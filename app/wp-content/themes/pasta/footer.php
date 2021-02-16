@@ -14,6 +14,7 @@
     loop: true,
     parallax: true,
     pagination: false,
+    simulateTouch: false
   });
 </script>
 <!--<script src="buildjs/owl.carousel.min.js"></script>-->

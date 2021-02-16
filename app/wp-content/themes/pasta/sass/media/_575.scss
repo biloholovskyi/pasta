@@ -20,6 +20,7 @@
       }
     }
   }
+
   .product {
     padding: 40px 0;
     min-height: unset;
@@ -55,12 +56,14 @@
         top: 100px;
       }
     }
+
     &_title {
 
       .name {
         font-size: 28px;
         line-height: 32px;
-        margin-bottom: 16px;
+        max-width: 269px;
+        margin: 0 auto 16px;
       }
       .desc {
         font-size: 16px;
@@ -84,6 +87,7 @@
       }
     }
   }
+
   .shop {
     padding: 8px;
     img {
@@ -127,6 +131,7 @@
       top: -60px;
     }
   }
+
   .slider {
     padding-bottom: 48px;
     #slider {
@@ -144,6 +149,7 @@
       }
     }
   }
+
   .slider_title {
     font-size: 28px;
     line-height: 32px;
@@ -253,6 +259,15 @@
     }
     .desc {
       font-size: 14px;
+    }
+  }
+
+  .intro {
+    &_title {
+      .name {
+        max-width: 269px;
+        margin: 0 auto 16px;
+      }
     }
   }
 }

@@ -86,7 +86,7 @@
 
 <footer class="footer main_footer">
   <div class="left">
-    <div>© ОАО «GoodNut» 2020 г.</div>
+    <div>ИП Ахмерова Р.С. ОГРНИП 317169000173513</div>
     <div class="border">/</div>
 
     <?php
